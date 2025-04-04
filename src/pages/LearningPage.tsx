@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { CheckCircle2, ChevronRight, ArrowLeft, BookOpen, Code, FileText, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -491,6 +490,160 @@ const LearningPage = () => {
                             Java <strong>compiles source code</strong> into <strong>bytecode</strong>, which runs on JVM, making Java platform-independent.
                           </p>
                         </div>
+                      </section>
+                      
+                      <section className="space-y-4 pt-4">
+                        <h3 className="text-xl font-semibold">Memory Management in Java</h3>
+                        
+                        <Accordion type="single" collapsible className="w-full">
+                          <AccordionItem value="stack-vs-heap">
+                            <AccordionTrigger>Stack vs Heap Memory</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="font-medium mb-2">Stack Memory</h4>
+                                  <ul className="list-disc pl-5 space-y-2 text-sm">
+                                    <li>Stores method invocation information, local variables, and object references</li>
+                                    <li>Each thread has its own stack</li>
+                                    <li>Follows Last In, First Out (LIFO) order</li>
+                                    <li>Limited in size, can cause StackOverflowError</li>
+                                    <li>Automatically managed memory</li>
+                                  </ul>
+                                </div>
+                                
+                                <div>
+                                  <h4 className="font-medium mb-2">Heap Memory</h4>
+                                  <ul className="list-disc pl-5 space-y-2 text-sm">
+                                    <li>Used for dynamic memory allocation of objects</li>
+                                    <li>Shared by all threads in the program</li>
+                                    <li>Managed by garbage collection</li>
+                                    <li>Typically larger and slower to access</li>
+                                  </ul>
+                                </div>
+                                
+                                <div className="bg-secondary/30 p-3 rounded-md">
+                                  <h4 className="font-medium mb-2">Code Example</h4>
+                                  <pre className="text-xs bg-secondary/50 p-2 rounded">{`
+public class MemoryExample {
+    public static void main(String[] args) {
+        int num = 5;  // Stored in Stack
+        Person person = new Person(); // Reference in Stack, Object in Heap
+    }
+}
+
+class Person {
+    String name = "John"; // Object stored in Heap
+}`}</pre>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                          
+                          <AccordionItem value="main-method">
+                            <AccordionTrigger>Main Method in Java</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="font-medium mb-2">Structure: public static void main(String[] args)</h4>
+                                  <ul className="list-disc pl-5 space-y-2 text-sm">
+                                    <li><strong>public:</strong> Makes the method accessible from outside the class</li>
+                                    <li><strong>static:</strong> Method can be called without creating an instance</li>
+                                    <li><strong>void:</strong> Method does not return a value</li>
+                                    <li><strong>String[] args:</strong> Accepts command-line arguments</li>
+                                  </ul>
+                                </div>
+                                
+                                <div className="bg-secondary/30 p-3 rounded-md">
+                                  <h4 className="font-medium mb-2">Example</h4>
+                                  <pre className="text-xs bg-secondary/50 p-2 rounded">{`
+public class MainMethodExample {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}`}</pre>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </section>
+                      
+                      <section className="space-y-4 pt-4">
+                        <h3 className="text-xl font-semibold">Additional Java Fundamentals</h3>
+                        
+                        <Accordion type="single" collapsible className="w-full">
+                          <AccordionItem value="void-type">
+                            <AccordionTrigger>Void Type in Java</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <p className="text-sm">
+                                  The void type indicates that a method performs an action but does not return any value.
+                                </p>
+                                
+                                <div className="bg-secondary/30 p-3 rounded-md">
+                                  <h4 className="font-medium mb-2">Example</h4>
+                                  <pre className="text-xs bg-secondary/50 p-2 rounded">{`
+public static void printMessage(String message) {
+    System.out.println(message); // No return value
+}`}</pre>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                          
+                          <AccordionItem value="access-modifiers">
+                            <AccordionTrigger>Access Modifiers in Java</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <ul className="list-disc pl-5 space-y-2 text-sm">
+                                  <li><strong>public:</strong> Accessible from anywhere</li>
+                                  <li><strong>private:</strong> Accessible only within the same class</li>
+                                  <li><strong>protected:</strong> Accessible within same package and by subclasses</li>
+                                  <li><strong>default (Package-Private):</strong> Accessible only within the same package</li>
+                                </ul>
+                                
+                                <div className="bg-secondary/30 p-3 rounded-md">
+                                  <h4 className="font-medium mb-2">Example</h4>
+                                  <pre className="text-xs bg-secondary/50 p-2 rounded">{`
+public class AccessModifiersExample {
+    public String publicVar = "Public";
+    private String privateVar = "Private";
+    protected String protectedVar = "Protected";
+    String defaultVar = "Default";
+}`}</pre>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                          
+                          <AccordionItem value="string-immutability">
+                            <AccordionTrigger>String Immutability</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <p className="text-sm">
+                                  A String in Java is immutable, meaning its state cannot be modified after creation.
+                                </p>
+                                
+                                <div>
+                                  <h4 className="font-medium mb-2">Benefits</h4>
+                                  <ul className="list-disc pl-5 space-y-2 text-sm">
+                                    <li>Thread safety</li>
+                                    <li>Memory efficiency</li>
+                                    <li>Security in sensitive scenarios</li>
+                                  </ul>
+                                </div>
+                                
+                                <div className="bg-secondary/30 p-3 rounded-md">
+                                  <h4 className="font-medium mb-2">Example</h4>
+                                  <pre className="text-xs bg-secondary/50 p-2 rounded">{`
+String str = "Hello";
+str = str + " World";  // Creates a new String object
+System.out.println(str);  // Prints "Hello World"`}</pre>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
                       </section>
                     </>
                   )}

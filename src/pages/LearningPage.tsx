@@ -772,11 +772,11 @@ Execution Completed.`}
                                     Encapsulation is the process of wrapping code and data together into a single unit. In Java, it is implemented using private access modifier which restricts access to class fields and providing public getter and setter methods.<br /><br />
                                     <strong>Example:</strong><br />
                                     <code>
-                                      class Student {<br />
+                                      class Student {"{"}<br />
                                       &nbsp;&nbsp;private String name; // private variable<br />
-                                      &nbsp;&nbsp;public String getName() { return name; } // getter<br />
-                                      &nbsp;&nbsp;public void setName(String name) { this.name = name; } // setter<br />
-                                      }
+                                      &nbsp;&nbsp;public String getName() {"{"} return name; {"}"} // getter<br />
+                                      &nbsp;&nbsp;public void setName(String name) {"{"} this.name = name; {"}"} // setter<br />
+                                      {"}"}
                                     </code>
                                   </p>
                                 )}

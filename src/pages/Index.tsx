@@ -1,4 +1,3 @@
-
 import { ChevronDown, PanelRight, BookOpen, FileText, CheckCircle2, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,6 +7,7 @@ import Hero from '@/components/Hero';
 import LearningPathTimeline from '@/components/LearningPathTimeline';
 import ProgressTracker from '@/components/ProgressTracker';
 import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -150,9 +150,11 @@ const Index = () => {
                         ))}
                       </ul>
                       
-                      <Button className="mt-6 bg-java hover:bg-java-dark text-white">
-                        Start Learning
-                      </Button>
+                      <Link to="/course-content">
+                        <Button className="mt-6 bg-java hover:bg-java-dark text-white">
+                          Start Learning
+                        </Button>
+                      </Link>
                     </div>
                     
                     <div className="code-block">
@@ -267,9 +269,11 @@ public class JavaController {
               Begin your transformation into a Java expert today with our structured 8-week learning path.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/learning'}>
-                Start Learning Now
-              </Button>
+              <Link to="/course-content">
+                <Button size="lg" className="bg-java hover:bg-java-dark text-white">
+                  Start Learning Now
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" onClick={() => document.getElementById('learning-path')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Learning Path
               </Button>

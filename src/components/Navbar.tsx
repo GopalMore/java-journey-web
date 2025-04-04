@@ -27,13 +27,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">Home</Link>
             <a href="/#learning-path" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">Learning Path</a>
-            <a href="/#tutorials" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">Tutorials</a>
+            <Link to="/course-content" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">Course Content</Link>
             <a href="/#quiz" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">Quiz</a>
             <a href="/#about" className="px-3 py-2 text-sm font-medium hover:text-java transition-colors">About</a>
             <div className="ml-2">
               <ThemeToggle />
             </div>
-            <Button className="ml-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/learning'}>Start Learning</Button>
+            <Button className="ml-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/course-content'}>Start Learning</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -64,13 +64,13 @@ const Navbar = () => {
             >
               Learning Path
             </a>
-            <a 
-              href="/#tutorials" 
+            <Link 
+              to="/course-content" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary hover:text-java"
               onClick={toggleMenu}
             >
-              Tutorials
-            </a>
+              Course Content
+            </Link>
             <a 
               href="/#quiz" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary hover:text-java"
@@ -85,7 +85,7 @@ const Navbar = () => {
             >
               About
             </a>
-            <Button className="w-full mt-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/learning'}>
+            <Button className="w-full mt-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/course-content'}>
               Start Learning
             </Button>
           </div>

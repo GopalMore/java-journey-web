@@ -3,6 +3,7 @@ import { Clock, Book, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface CourseCardProps {
   title: string;
@@ -37,7 +38,7 @@ const CourseCard = ({
   className 
 }: CourseCardProps) => {
   return (
-    <Card className={cn("card-hover", className)}>
+    <Card className={cn("card-hover transition-all duration-300 hover:shadow-lg border-java/10", className)}>
       <CardHeader>
         <div className="flex justify-between items-start">
           <div>
@@ -66,7 +67,11 @@ const CourseCard = ({
         </div>
       </CardContent>
       <CardFooter>
-        <Button variant="outline" className="w-full">Start Learning</Button>
+        <Link to="/course-content" className="w-full">
+          <Button variant="outline" className="w-full border-java text-java hover:bg-java hover:text-white transition-all duration-300">
+            Start Learning
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

@@ -33,7 +33,9 @@ const Navbar = () => {
             <div className="ml-2">
               <ThemeToggle />
             </div>
-            <Button className="ml-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/course-content'}>Start Learning</Button>
+            <Link to="/course-content">
+              <Button className="ml-4 bg-java hover:bg-java-dark text-white">Start Learning</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -85,9 +87,11 @@ const Navbar = () => {
             >
               About
             </a>
-            <Button className="w-full mt-4 bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/course-content'}>
-              Start Learning
-            </Button>
+            <Link to="/course-content">
+              <Button className="w-full mt-4 bg-java hover:bg-java-dark text-white">
+                Start Learning
+              </Button>
+            </Link>
           </div>
         </div>
       )}

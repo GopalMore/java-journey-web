@@ -267,10 +267,10 @@ public class JavaController {
               Begin your transformation into a Java expert today with our structured 8-week learning path.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-java hover:bg-java-dark text-white">
+              <Button size="lg" className="bg-java hover:bg-java-dark text-white" onClick={() => window.location.href = '/learning'}>
                 Start Learning Now
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => document.getElementById('learning-path')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Learning Path
               </Button>
             </div>

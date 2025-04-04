@@ -1,8 +1,11 @@
 
 import { ArrowRight, FileCode, BookOpen, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-8 pb-16 md:pt-12 md:pb-24">
       <div className="relative container mx-auto px-4">
@@ -15,10 +18,12 @@ const Hero = () => {
               Comprehensive, structured learning path to help you become a Java expert. Start your coding journey today!
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="gap-2 bg-java hover:bg-java-dark text-white">
+              <Button className="gap-2 bg-java hover:bg-java-dark text-white" onClick={() => navigate('/learning')}>
                 Start Learning <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2" onClick={() => {
+                document.getElementById('learning-path')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
                 View Roadmap <FileCode className="h-4 w-4" />
               </Button>
             </div>

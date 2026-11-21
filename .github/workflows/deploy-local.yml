@@ -3,6 +3,7 @@ name: Local Self-Hosted Auto-Deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
 
 jobs:
   deploy-to-local:
@@ -25,5 +26,10 @@ jobs:
           if [ -n "$PID" ]; then
             kill -9 $PID
           fi
-          nohup npm run preview -- --port $PORT --host > /tmp/java-journey-server.log 2>&1 &
+
+          # Tells GitHub Actions runner NOT to kill this background process when step ends
+          export RUNNER_TRACKING_ID=""
+          nohup python3 -m http.server $PORT --directory dist > /tmp/java-journey-server.log 2>&1 &
+          sleep 2
+
           echo "Deployed successfully on local machine at http://localhost:$PORT"

@@ -1,0 +1,29 @@
+name: Local Self-Hosted Auto-Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-to-local:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Deploy Local Server
+        run: |
+          PORT=4173
+          PID=$(lsof -ti :$PORT || true)
+          if [ -n "$PID" ]; then
+            kill -9 $PID
+          fi
+          nohup npm run preview -- --port $PORT --host > /tmp/java-journey-server.log 2>&1 &
+          echo "Deployed successfully on local machine at http://localhost:$PORT"

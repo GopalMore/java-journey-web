@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { CheckCircle2, ChevronRight, ArrowLeft, BookOpen, Code, FileText, Play, Award, ChevronDown } from 'lucide-react';
+import { CheckCircle2, ChevronRight, ArrowLeft, BookOpen, Code, FileText, Play, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -13,7 +13,6 @@ import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { Link } from 'react-router-dom';
 
 // Quiz data for Day 1-2
 const javaBascisQuiz = [

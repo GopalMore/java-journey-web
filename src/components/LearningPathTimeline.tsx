@@ -1,6 +1,5 @@
 
-import { CalendarDays, Users, Book, Code, Database, Server, GitBranch, Cpu, Shield } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Users, Book, Code, Database, Server, Cpu, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import CourseCard from './CourseCard';
 
